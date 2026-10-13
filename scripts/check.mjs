@@ -1,0 +1,12 @@
+import { readFile, access } from 'node:fs/promises';
+import vm from 'node:vm';
+const html = await readFile('index.html', 'utf8');
+const context = { window: {} }; vm.runInNewContext(await readFile('config.js', 'utf8'), context);
+const config = context.window.GYM_CONFIG;
+const ids = [...html.matchAll(/id="([^"]+)"/g)].map(match => match[1]);
+if (ids.length !== new Set(ids).size) throw new Error('IDs duplicados');
+for (const [, anchor] of html.matchAll(/href="#([^"]+)"/g)) if (!ids.includes(anchor)) throw new Error(`Ancla faltante: ${anchor}`);
+for (const image of config.images) await access(image.src);
+for (const [, path] of html.matchAll(/(?:src|href)="(assets\/[^"?]+)"/g)) await access(path);
+if (!/^\d{10,15}$/.test(config.whatsapp)) throw new Error('Número de WhatsApp inválido');
+console.log('Verificado: anclas internas, IDs, imágenes, tipografías y formato de WhatsApp.');
