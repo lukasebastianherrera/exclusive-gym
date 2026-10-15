@@ -1,10 +1,11 @@
-// Reemplazá el número de ejemplo antes de publicar. Argentina: 549 + área + número.
+// WhatsApp del gimnasio. Argentina: 549 + área + número.
 window.GYM_CONFIG = {
-  whatsapp: '5491100000000',
-  whatsappIsPlaceholder: true,
+  whatsapp: '5491130231999',
+  whatsappIsPlaceholder: false,
   generalPrice: 68000,
   promoPrice: 34000,
-  pricePeriod: '', // Ejemplo: 'por mes', cuando se confirme la modalidad.
+  additionalPrices: { horario: 48000, diario: 10000, trimestral: 180000, semestral: 245000, anual: 450000 },
+  pricePeriod: 'mes',
   address: 'Presidente Perón 2074',
   locality: 'Villa de Mayo, Buenos Aires',
   hours: { weekdays: '7:00 a 22:00 hs', saturday: '9:00 a 17:00 hs', sunday: 'Cerrado' },

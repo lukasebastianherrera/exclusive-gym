@@ -8,9 +8,9 @@ Landing estática en HTML, CSS y JavaScript, con fotografías reales aportadas p
 
 ## Configuración
 
-Editar `config.js` para cambiar precios, modalidad, horarios, dirección, fotos y redes. El número `5491100000000` es un ejemplo. Los botones muestran un aviso de demostración mientras `whatsappIsPlaceholder` sea `true`, evitando enviar consultas a un número desconocido. Al ingresar el número real, poner esa propiedad en `false`: todos los botones abrirán WhatsApp con su mensaje específico.
+Editar `config.js` para cambiar precios, modalidad, horarios, dirección, fotos y redes. WhatsApp está conectado al número del gimnasio: +54 9 11 3023-1999. Todos los botones abren WhatsApp con un mensaje específico y `whatsappIsPlaceholder` queda en `false`.
 
-No se asume que los precios sean mensuales. Completar `pricePeriod` cuando se confirme. Las tarifas y los horarios son los del brief; validar con el gimnasio antes de publicar. El mapa busca la dirección suministrada; comprobar el marcador antes del lanzamiento.
+La cuota mensual y los precios de pase diario, promo horario y planes de 3, 6 y 12 meses provienen del cartel aportado el 15 de octubre de 2026. Los planes de varios meses muestran el precio total. La condición de inscripción de a dos para nuevos socios se mantiene del brief original. El cartel indica $48.000 para la promo de 11 a 15 hs; se muestra ese precio sin calcular descuentos adicionales.
 
 ## Vercel
 

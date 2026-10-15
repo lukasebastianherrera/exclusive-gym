@@ -1,7 +1,8 @@
 'use strict';
 const config = window.GYM_CONFIG;
 const money = value => new Intl.NumberFormat('es-AR', { style: 'currency', currency: 'ARS', maximumFractionDigits: 0 }).format(value).replace(/\s/g, '');
-document.querySelectorAll('[data-price]').forEach(el => el.textContent = money(el.dataset.price === 'promo' ? config.promoPrice : config.generalPrice));
+const prices = { general: config.generalPrice, promo: config.promoPrice, ...config.additionalPrices };
+document.querySelectorAll('[data-price]').forEach(el => el.textContent = money(prices[el.dataset.price]));
 document.querySelectorAll('[data-period]').forEach(el => el.textContent = config.pricePeriod ? ` / ${config.pricePeriod}` : '');
 document.querySelectorAll('[data-hours]').forEach(el => el.textContent = config.hours[el.dataset.hours]);
 document.querySelectorAll('[data-address]').forEach(el => el.textContent = config.address);
@@ -13,8 +14,13 @@ document.querySelector('#gym-map').src = `https://maps.google.com/maps?q=${encod
 const messages = {
   general: 'Hola, ¿cómo están? Quería consultar por Exclusive Gym y conocer más información.',
   hero: 'Hola, me gustaría empezar a entrenar en Exclusive Gym. ¿Me brindan información?',
-  tarifa: 'Hola, quería consultar por la tarifa general de Exclusive Gym.',
-  promo: `Hola, quería consultar por la promoción para nuevos socios de ${money(config.promoPrice)} por persona inscribiéndose de a dos.`
+  tarifa: `Hola, quería consultar por la cuota mensual de ${money(config.generalPrice)} de Exclusive Gym.`,
+  promo: `Hola, quería consultar por la promoción para nuevos socios de ${money(config.promoPrice)} por persona inscribiéndose de a dos en Exclusive Gym.`,
+  horario: `Hola, quería consultar por la promo de 11 a 15 hs de ${money(prices.horario)} de Exclusive Gym.`,
+  diario: `Hola, quería consultar por el pase diario de ${money(prices.diario)} de Exclusive Gym.`,
+  trimestral: `Hola, quería consultar por el plan de 3 meses de ${money(prices.trimestral)} de Exclusive Gym.`,
+  semestral: `Hola, quería consultar por el plan de 6 meses de ${money(prices.semestral)} de Exclusive Gym.`,
+  anual: `Hola, quería consultar por el plan de 12 meses de ${money(prices.anual)} de Exclusive Gym.`
 };
 const demo = document.querySelector('#demo-contact');
 const validNumber = /^\d{10,15}$/.test(config.whatsapp);

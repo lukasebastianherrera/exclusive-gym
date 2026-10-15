@@ -27,3 +27,22 @@
   .footer-brand{flex-direction:column;gap:12px}
   .footer-bottom{align-items:center;text-align:center}
 }
+/* Additional rates retain the existing gold and charcoal pricing hierarchy. */
+.other-plans{width:min(960px,100%);margin:64px auto 0}
+.other-plans>h3{font-family:'Barlow Condensed',sans-serif;font-size:32px;margin-bottom:24px}
+.plan-row{display:grid;grid-template-columns:minmax(0,1fr) 180px auto;gap:32px;align-items:center;padding:24px 0;border-top:1px solid var(--border)}
+.plan-row h4{font-size:20px;font-weight:500;margin:0 0 6px}
+.plan-row p{margin:0;font-size:14px}
+.plan-amount{display:flex;flex-direction:column;gap:4px}
+.plan-amount strong{font-family:'Barlow Condensed',sans-serif;font-size:36px;line-height:1.1;color:var(--gold);font-variant-numeric:tabular-nums}
+.plan-amount span{font-size:12px}
+@media(max-width:640px){
+  .other-plans{margin-top:48px}
+  .other-plans>h3{text-align:center;font-size:30px}
+  .plan-row{grid-template-columns:minmax(0,1fr) auto;gap:16px;padding-block:24px}
+  .plan-row h4{font-size:18px}
+  .plan-row>div>p{font-size:13px}
+  .plan-amount{text-align:right}
+  .plan-amount strong{font-size:32px}
+  .plan-row>.text-link{grid-column:1 / -1;justify-self:center;padding-block:10px}
+}
