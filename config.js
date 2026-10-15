@@ -9,7 +9,7 @@ window.GYM_CONFIG = {
   address: 'Presidente Perón 2074',
   locality: 'Villa de Mayo, Buenos Aires',
   hours: { weekdays: '7:00 a 22:00 hs', saturday: '9:00 a 17:00 hs', sunday: 'Cerrado' },
-  socialLinks: [], // Ejemplo: [{ label: 'Instagram', url: 'https://instagram.com/...' }]
+  socialLinks: [{ label: 'Instagram @exclusive_gym1 ↗', url: 'https://www.instagram.com/exclusive_gym1/' }],
   images: [
     { src: 'assets/gimnasio.webp', alt: 'Salón de Exclusive Gym con máquinas de musculación e iluminación roja', label: 'El gimnasio' },
     { src: 'assets/fuerza.webp', alt: 'Barras y discos en el sector de musculación de Exclusive Gym', label: 'Musculación' },
